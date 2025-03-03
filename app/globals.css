@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 355 100% 70%; /* Coral #FF6B6B */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 174 59% 56%; /* Teal #4ECDC4 */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 134 37% 56%; /* Sage Green #87C159 */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    /* Instagram-like gradient */
+    --instagram-gradient: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 355 100% 70%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 174 59% 56%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 134 37% 56%;
+    --accent-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-poppins font-semibold;
+  }
+  p,
+  span,
+  div,
+  button {
+    @apply font-open-sans;
+  }
+}
+
+.instagram-gradient {
+  background: var(--instagram-gradient);
+}
+
+.story-ring {
+  background: var(--instagram-gradient);
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.story-ring-seen {
+  background: #dbdbdb;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.loop-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+  }
+}
+
+.share-pulse {
+  animation: sharePulse 3s infinite;
+}
+
+@keyframes sharePulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(78, 205, 196, 0.7);
+  }
+
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(78, 205, 196, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(78, 205, 196, 0);
+  }
+}
+
+.safe-glow {
+  animation: safeGlow 4s infinite;
+}
+
+@keyframes safeGlow {
+  0% {
+    box-shadow: 0 0 5px 0 rgba(135, 193, 89, 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 15px 5px rgba(135, 193, 89, 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 5px 0 rgba(135, 193, 89, 0.5);
+  }
+}
+
